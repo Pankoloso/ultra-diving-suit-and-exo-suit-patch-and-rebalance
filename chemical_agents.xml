@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+     <Item name="" identifier="feniterhazmats" category="Equipment" tags="smallitem,clothing,thermal" scale="0.5" fireproof="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="feniterchemcrate1">  
+      <Price baseprice="990" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.15" minavailable="2" maxavailable="2" sold="true" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" maxavailable="2" sold="true" />
+        <Price storeidentifier="merchantmilitary" minavailable="2" maxavailable="2" sold="true" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" maxavailable="2" sold="true" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="40">
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredSkill identifier="electrical" level="30" />
+        <RequiredItem identifier="healthscanner" />
+        <RequiredItem identifier="fpgacircuit" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+        <RequiredItem identifier="rubber" amount="2" />
+        <RequiredItem identifier="lead" />
+      </Fabricate>
+      <Deconstruct time="30">
+        <Item identifier="plastic" amount="2" />
+        <Item identifier="rubber" amount="2" />
+        <Item identifier="lead" />
+        <Item identifier="fpgacircuit" amount="2" />
+        <Item identifier="healthscanner" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/hazmatextra.png" sourcerect="0,0,150,120" origin="0.5,0.5" />
+      <Sprite name="Diving Suit Item" texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfaremisc.png" sourcerect="80,83,94,78" depth="0.55" origin="0.5,0.5" />
+      <Body width="90" height="70" density="30" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,148" style="ItemUI" />
+        <TickBox text="Suit Power" IsOn="false">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Hazmat Suit Helmet Wearable" texture="%ModDir:2974772300%/thecodelol/Items/helmets.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.675" hidelimb="true" alphaclipotherwearables="true" sourcerect="0,0,160,160" origin="0.5,0.55">
+          <LightComponent range="2400.0" lightcolor="80,212,164,255" powerconsumption="2" IsOn="false" allowingameediting="false">
+            <StatusEffect type="OnWearing" target="This,Character" setvalue="true" comparison="And">
+              <Conditional IsDead="false" />
+              <Conditional IsLocalPlayer="true" />
+            </StatusEffect>
+            <LightTexture texture="Content/Lights/divinghelmetlight.png" origin="0.03, 0.5" size="0.5,0.15" />
+          </LightComponent>
+        </sprite>
+        <sprite name="Hazmat Suit Torso" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="Torso" hidelimb="true" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Hand" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Hand" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Lower Arm" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Lower Arm" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Upper Arm" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Upper Arm" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Waist" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Thigh" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Thigh" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Leg" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Leg" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Shoe" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Shoe" texture="%ModDir:2974772300%/thecodelol/Items/Hazmat.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" ObstructVision="false" PressureProtection="6000.0" PropulsionSpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" HideFace="true">
+          <Sound file="%ModDir:2974772300%/thecodelol/Others/masksounds.ogg" range="50" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+          <Conditional IsDead="false" />
+          <Conditional HullOxygenPercentage="lt 50" />
+          <Conditional InWater="false" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+          <Conditional InWater="true" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+          <Conditional IsDead="false" />
+          <RequiredItem items="weldingfueltank" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" targetlimbs="Torso" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+          <Conditional IsDead="false" />
+          <RequiredItem items="incendiumfueltank" type="Contained" />
+          <Affliction identifier="burn" amount="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="0.15" targetslot="0" interval="1" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" />
+          <RequiredItem items="refillableoxygensource" type="Contained" />
+        <Conditional targetcontainer="true" IsOn="true" /></StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="-0.3" targetslot="1" interval="1" disabledeltatime="true">
+          <Conditional targetcontainer="true" IsOn="true" />
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.4" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.2" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn,blunttrauma" damagemultiplier="0.5" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="acidreaction" damagemultiplier="0.4" probabilitymultiplier="0" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="Chemical agents" damagemultiplier="0" probabilitymultiplier="0" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.4" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,bitewounds,lacerations,bleeding" damagemultiplier="0.7" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="scp_presolatexinfection,scp_hexgasdamage" damagemultiplier="0" probabilitymultiplier="0" />
+        <damagemodifier afflictionidentifiers="contamination" armorsector="0.0,360.0" probabilitymultiplier="0" damagesound="LimbArmor" deflectprojectiles="true"/>
+        <StatValue stattype="FlowResistance" value="1" />
+        <StatValue stattype="SwimmingSpeed" value="-0.45" />
+        <ItemComponent IsActiveConditionalComparison="Or">
+          <IsActive HullOxygenPercentage="lt 50" />
+          <IsActive InWater="eq true" />
+          <StatusEffect type="OnActive" target="Contained,Character" comparison="And" targetslot="0">
+            <RequiredItem items="oxygensource" type="Contained" />
+            <Conditional condition="lt 5.0" />
+            <Sound file="Content/Items/WarningBeepSlow.ogg" range="250" loop="true" />
+          </StatusEffect>
+          <StatusEffect type="OnActive" target="Contained" playsoundonrequireditemfailure="true" targetslot="0">
+            <RequiredItem items="oxygensource" type="Contained" matchonempty="true" />
+            <Conditional condition="lte 0.0" />
+            <Sound file="Content/Items/WarningBeep.ogg" range="250" loop="true" />
+          </StatusEffect>
+        </ItemComponent>
+      </Wearable>
+      <Holdable slots="RightHand,LeftHand" controlpose="true" holdpos="0,-60" handle1="0,30" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+      <ItemContainer capacity="0" maxstacksize="0" hideitems="true" containedstateindicatorstyle="tank" containedstateindicatorslot="0">
+        <Containable items="none" />
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="oxygensource,weldingtoolfuel" excludeditems="oxygenitetank" />
+          <Containable items="oxygenitetank">
+            <StatusEffect type="OnContaining" target="Character" SpeedMultiplier="1.3" setvalue="true" comparison="And" targetslot="0">
+              <Conditional IsDead="false" />
+              <Conditional HullOxygenPercentage="lt 50" />
+              <Conditional InWater="false" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="mobilebattery">
+            <StatusEffect type="OnContaining" target="This,Character" Voltage="4.0" setvalue="true">
+              <Conditional IsDead="false" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <aitarget maxsightrange="1000" />
+      <StatusHUD drawhudwhenequipped="true" range="1000" />
+    </Item>
+    <Item name="" identifier="fenitercbrneod" category="Equipment" tags="smallitem,clothing" scale="0.5" fireproof="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="feniterchemcrate1">
+      <Price baseprice="1300" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.15" minavailable="1" maxavailable="1" sold="true" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" maxavailable="1" sold="true" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" maxavailable="1" sold="true" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" maxavailable="1" sold="true" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="40">
+        <RequiredSkill identifier="weapons" level="90" />
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredSkill identifier="electrical" level="50" />
+        <RequiredItem identifier="plastic" amount="5" />
+        <RequiredItem identifier="rubber" amount="2" />
+        <RequiredItem identifier="lead" amount="3" />
+        <RequiredItem identifier="ballisticfiber" amount="4" />
+        <RequiredItem identifier="scp_durasteel" amount="3" />
+      </Fabricate>
+      <Deconstruct time="30">
+        <Item identifier="plastic" amount="2" />
+        <Item identifier="rubber" amount="2" />
+        <Item identifier="lead" amount="2" />
+        <Item identifier="ballisticfiber" amount="4" />
+        <Item identifier="scp_durasteel" amount="2" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/hazmatextra.png" sourcerect="300,0,150,120" origin="0.5,0.5" />
+      <Sprite name="Diving Suit Item" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit_Item.png" sourcerect="0,0,146,120" depth="0.55" origin="0.5,0.5" />
+      <Body width="160" height="110" density="30" />
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="CBRN EOD Suit Torso" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="Torso" hidelimb="false" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" limbdepth="8" />
+        <sprite name="CBRN EOD Helmet Wearable" texture="%ModDir:2974772300%/thecodelol/Items/helmets.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.675" hidelimb="true" sourcerect="160,0,160,160" origin="0.5,0.57" alphaclipotherwearables="true" />
+        <sprite name="CBRN EOD Suit Right Hand" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Left Hand" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Right Lower Arm" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Left Lower Arm" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Right Upper Arm" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Left Upper Arm" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Waist" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Right Thigh" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Left Thigh" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Right Leg" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Left Leg" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Left Shoe" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="CBRN EOD Suit Right Shoe" texture="%ModDir:2974772300%/thecodelol/Items/bombsuit.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" UseHullOxygen="false" />
+        <StatusEffect type="OnWearing" target="Character" UseHullOxygen="false" ObstructVision="true" SpeedMultiplier="0.6" setvalue="true" disabledeltatime="true" HideFace="true">
+          <Sound file="%ModDir:2974772300%/thecodelol/Others/masksounds.ogg" range="50" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Character" duration="0.1">
+          <Affliction identifier="heated_diving_suit" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="1.0" interval="1" disabledeltatime="true">
+          <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
+          <RequiredItem items="refillableoxygensource" type="Contained" excludebroken="false" excludefullcondition="true" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.2" comparison="Or">
+          <Conditional IsDead="false" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true">
+          <Conditional IsDead="false" />
+          <RequiredItem items="weldingfueltank" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" targetlimbs="Torso" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true">
+          <Conditional IsDead="false" />
+          <RequiredItem items="incendiumfueltank" type="Contained" />
+          <Affliction identifier="burn" amount="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="0.15" targetslot="0" interval="1" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" />
+          <RequiredItem items="refillableoxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="-0.3" targetslot="1" interval="1" disabledeltatime="true">
+          <Conditional targetcontainer="true" IsOn="true" />
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Character" disabledeltatime="true" comparison="And">
+          <Conditional stun="gt 0" />
+          <Conditional stun="lt 1" />
+          <Affliction identifier="stun" amount="-1" />
+          <ReduceAffliction type="stun" amount="1" />
+        </StatusEffect>
+        <StatusEffect tags="cbrnsuit" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.5" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn" damagemultiplier="0.2" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.03" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="acidreaction" damagemultiplier="0.4" probabilitymultiplier="0" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="scp_presolatexinfection,scp_hexgasdamage" damagemultiplier="0" probabilitymultiplier="0" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="Chemical agents" damagemultiplier="0" probabilitymultiplier="0" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.35" damagesound="armourlightimpact" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.2" damagesound="armourlightimpact" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,bleeding" damagemultiplier="0.2" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.6" damagesound="armourlightimpact" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.2" />
+        <damagemodifier afflictionidentifiers="contamination" armorsector="0.0,360.0" probabilitymultiplier="0" damagesound="LimbArmor" deflectprojectiles="true"/>
+        <ItemComponent IsActiveConditionalComparison="Or">
+          <IsActive InWater="eq true" />
+          <StatusEffect type="OnActive" target="Contained,Character" comparison="And" targetslot="0">
+            <RequiredItem items="oxygensource" type="Contained" />
+            <Conditional condition="lt 5.0" />
+            <Sound file="Content/Items/WarningBeepSlow.ogg" range="250" loop="true" />
+          </StatusEffect>
+          <StatusEffect type="OnActive" target="Contained" playsoundonrequireditemfailure="true" targetslot="0">
+            <RequiredItem items="oxygensource" type="Contained" matchonempty="true" />
+            <Conditional condition="lte 0.0" />
+            <Sound file="Content/Items/WarningBeep.ogg" range="250" loop="true" />
+          </StatusEffect>
+        </ItemComponent>
+      </Wearable>
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+      <ItemContainer capacity="0" maxstacksize="0" hideitems="true" containedstateindicatorstyle="tank" containedstateindicatorslot="0">
+        <Containable items="none" />
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="oxygensource,weldingtoolfuel" excludeditems="oxygenitetank" />
+          <Containable items="oxygenitetank">
+            <StatusEffect type="OnContaining" target="Character" SpeedMultiplier="1.3" setvalue="true" comparison="And" targetslot="0">
+              <Conditional IsDead="false" />
+              <Conditional HullOxygenPercentage="lt 50" />
+              <Conditional InWater="false" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="mobilebattery">
+            <StatusEffect type="OnContaining" target="This,Character" Voltage="4.0" setvalue="true">
+              <Conditional IsDead="false" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="feniterhazmatarmored" category="Equipment" tags="smallitem,clothing,thermal" scale="0.5" fireproof="true" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="feniterchemcrate1">
+      <Price baseprice="2640" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.15" minavailable="1" maxavailable="1" sold="true" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" maxavailable="1" sold="false" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" maxavailable="1" sold="true" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" maxavailable="1" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="40">
+        <RequiredSkill identifier="weapons" level="80" />
+        <RequiredSkill identifier="mechanical" level="60" />
+        <RequiredSkill identifier="electrical" level="60" />
+        <RequiredItem identifier="feniterhazmats" />
+        <RequiredItem identifier="ballisticfiber" amount="4" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="scp_durasteel" amount="2" />
+        <RequiredItem identifier="thermalgoggles" />
+      </Fabricate>
+      <Deconstruct time="30">
+        <Item identifier="feniterhazmats" />
+        <Item identifier="ballisticfiber" amount="2" />
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="scp_durasteel" />
+        <Item identifier="thermalgoggles" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/hazmatextra.png" sourcerect="450,0,150,120" origin="0.5,0.5" />
+      <Sprite name="Diving Suit Item" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmoredItem.png" sourcerect="0,0,146,120" depth="0.55" origin="0.5,0.5" />
+      <Body width="146" height="120" density="30" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,148" style="ItemUI" />
+        <TickBox text="Suit Power" IsOn="false">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Hazmat Suit Helmet Wearable" texture="%ModDir:2974772300%/thecodelol/Items/helmets.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.675" hidelimb="true" alphaclipotherwearables="true" sourcerect="320,0,160,160" origin="0.5,0.55">
+          <LightComponent range="2400.0" lightcolor="80,212,164,255" powerconsumption="2" IsOn="false" allowingameediting="false">
+            <StatusEffect type="OnWearing" target="This,Character" setvalue="true" comparison="And">
+              <Conditional IsDead="false" />
+              <Conditional IsLocalPlayer="true" />
+              <Conditional Voltage="lte 0.5" />
+            </StatusEffect>
+            <LightTexture texture="Content/Lights/divinghelmetlight.png" origin="0.03, 0.5" size="0.5,0.15" />
+          </LightComponent>
+        </sprite>
+        <sprite name="Hazmat Suit Torso" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="Torso" hidelimb="false" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Hand" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Hand" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Lower Arm" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Lower Arm" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Upper Arm" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Upper Arm" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Waist" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Thigh" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Thigh" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Leg" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Leg" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Left Shoe" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Hazmat Suit Right Shoe" texture="%ModDir:2974772300%/thecodelol/Items/HazmatArmored.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" ObstructVision="false" PressureProtection="6000.0" PropulsionSpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" HideFace="true">
+          <Sound file="%ModDir:2974772300%/thecodelol/Others/masksounds.ogg" range="50" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+          <Conditional IsDead="false" />
+          <Conditional HullOxygenPercentage="lt 50" />
+          <Conditional InWater="false" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.2" comparison="And" targetslot="0">
+          <Conditional InWater="true" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+          <Conditional IsDead="false" />
+          <RequiredItem items="weldingfueltank" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" targetlimbs="Torso" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+          <Conditional IsDead="false" />
+          <RequiredItem items="incendiumfueltank" type="Contained" />
+          <Affliction identifier="burn" amount="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="0.15" targetslot="0" interval="1" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" />
+          <RequiredItem items="refillableoxygensource" type="Contained" />
+        <Conditional targetcontainer="true" IsOn="true" /></StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="-0.3" targetslot="1" interval="1" disabledeltatime="true">
+          <Conditional targetcontainer="true" IsOn="true" />
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="0.5" setvalue="true" disabledeltatime="true">
+          <Conditional Voltage="lte 0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="This,Character" interval="3" disabledeltatime="true" comparison="And">
+          <Conditional stun="gt 0" />
+          <Conditional Voltage="gt 0" />
+          <Affliction identifier="stun" amount="-5" />
+          <ReduceAffliction type="stun" amount="5" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Character" duration="0.1">
+          <Affliction identifier="heated_diving_suit" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" Condition="-3" targetslot="1" interval="3" disabledeltatime="true">
+          <Conditional stun="gt 0" />
+          <Conditional Voltage="gt 0" />
+          <RequiredItem items="mobilebattery" type="Contained" />
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <ParticleEmitter particle="weldspark" copyentityangle="true" anglemin="0" anglemax="360" particleamount="60" velocitymin="100" velocitymax="3300" scalemin="0.45" scalemax="0.75" />
+        </StatusEffect>
+        <StatusEffect tags="cbrnsuit" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.2" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn" damagemultiplier="0.15" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.05" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="acidreaction" damagemultiplier="0.1" probabilitymultiplier="0" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="Chemical agents" damagemultiplier="0" probabilitymultiplier="0" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.3" damagesound="armourheavyimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.6" damagesound="armourlightimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,bleeding" damagemultiplier="0.35" damagesound="armourmedimpact" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.2" damagesound="armourheavyimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.15" damagesound="armourlightimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.2" damagesound="armourlightimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="sensoryoverload" damagemultiplier="0.3" damagesound="armourlightimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="scp_presolatexinfection,scp_hexgasdamage" damagemultiplier="0" probabilitymultiplier="0" />
+        <damagemodifier afflictionidentifiers="contamination" armorsector="0.0,360.0" probabilitymultiplier="0" damagesound="LimbArmor" deflectprojectiles="true"/>
+        <StatValue stattype="FlowResistance" value="1" />
+        <StatValue stattype="SwimmingSpeed" value="-0.45" />
+        <ItemComponent IsActiveConditionalComparison="Or">
+          <IsActive HullOxygenPercentage="lt 50" />
+          <IsActive InWater="eq true" />
+          <StatusEffect type="OnActive" target="Contained,Character" comparison="And" targetslot="0">
+            <RequiredItem items="oxygensource" type="Contained" />
+            <Conditional condition="lt 5.0" />
+            <Sound file="Content/Items/WarningBeepSlow.ogg" range="250" loop="true" />
+          </StatusEffect>
+          <StatusEffect type="OnActive" target="Contained" playsoundonrequireditemfailure="true" targetslot="0">
+            <RequiredItem items="oxygensource" type="Contained" matchonempty="true" />
+            <Conditional condition="lte 0.0" />
+            <Sound file="Content/Items/WarningBeep.ogg" range="250" loop="true" />
+          </StatusEffect>
+        </ItemComponent>
+      </Wearable>
+      <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+      <ItemContainer capacity="0" maxstacksize="0" hideitems="true" containedstateindicatorstyle="tank" containedstateindicatorslot="0">
+        <Containable items="none" />
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="oxygensource,weldingtoolfuel" excludeditems="oxygenitetank" />
+          <Containable items="oxygenitetank">
+            <StatusEffect type="OnContaining" target="Character" SpeedMultiplier="1.3" setvalue="true" comparison="And" targetslot="0">
+              <Conditional IsDead="false" />
+              <Conditional HullOxygenPercentage="lt 50" />
+              <Conditional InWater="false" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="mobilebattery">
+            <StatusEffect type="OnContaining" target="This,Character" Voltage="4.0" setvalue="true">
+              <Conditional IsDead="false" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+      <aitarget maxsightrange="1000" />
+      <StatusHUD drawhudwhenequipped="true" range="1000" thermalgoggles="true" />
+    </Item>
+    <!--Weapons-->
+    <Item name="" identifier="fenitersmground1" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="14" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.6" />
+        <Attack structuredamage="0.5" targetforce="3" itemdamage="0.5" severlimbsprobability="0.05">
+          <Affliction identifier="gunshotwound" strength="8.15" probability="0.1" />
+          <Affliction identifier="gunshotwound" strength="6.45" />
+          <Affliction identifier="explosiondamage" strength="1.325" />
+          <Affliction identifier="bleeding" strength="9.35" />
+          <Affliction identifier="bleeding" strength="12.15" probability="0.15" />
+          <Affliction identifier="stun" strength="0.1" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" duration="1">
+          <ParticleEmitter particle="fensmokevent" anglemin="70" anglemax="100" velocitymax="200" particlespersecond="64" colormultiplier="255,225,255,105" />
+          <Explosion range="60.0" ballastfloradamage="60" structuredamage="0" itemdamage="0" severlimbsprobability="0" penetration="0" showeffects="false">
+            <Affliction identifier="feniternonlethalagent" strength="5.25" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="fenitersmground2" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="14" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.6" />
+        <Attack structuredamage="0.5" targetforce="3" itemdamage="0.5" severlimbsprobability="0.05" penetration="0.1">
+          <Affliction identifier="gunshotwound" strength="7.15" probability="0.1" />
+          <Affliction identifier="gunshotwound" strength="5.45" />
+          <Affliction identifier="bleeding" strength="10.35" />
+          <Affliction identifier="bleeding" strength="15.15" probability="0.15" />
+          <Affliction identifier="stun" strength="2" />
+          <Affliction identifier="feniternerveagent" strength="1.45" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Explosion range="70.0" ballastfloradamage="12" structuredamage="0" itemdamage="0" severlimbsprobability="0" showeffects="false" penetration="0.1">
+            <Affliction identifier="feniternerveagent" strength="3.45" />
+            <Affliction identifier="feniternerveagentcon" strength="0.45" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="fenitersmground3" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="14" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.6" />
+        <Attack structuredamage="0.5" targetforce="3" itemdamage="0.5" severlimbsprobability="0.05" penetration="0.2">
+          <Affliction identifier="gunshotwound" strength="6.75" probability="0.2" />
+          <Affliction identifier="gunshotwound" strength="4.95" />
+          <Affliction identifier="bleeding" strength="10.35" />
+          <Affliction identifier="bleeding" strength="15.15" probability="0.15" />
+          <Affliction identifier="stun" strength="0.1" />
+          <Affliction identifier="feniterpsychoagent" strength="2.45" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Explosion range="35.0" ballastfloradamage="0" structuredamage="0" itemdamage="0" severlimbsprobability="0" showeffects="false" penetration="0.1">
+            <Affliction identifier="feniterpsychoagent" strength="6.45" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="feniterrifleround1" category="Weapon" maxstacksize="48" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,rifleammo,riflemanbonus" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="rifle" amount="6" spawnprobability="0.15" />
+      <PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="0.125" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.25" />
+      <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+      <PreferredContainer secondary="secarmcab" minamount="6" maxamount="12" spawnprobability="0.2" />
+      <Price baseprice="17">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" minavailable="12" sold="true" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50" amount="12">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="lead" amount="2" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="raptorbane" />
+        <RequiredItem identifier="chlorine" />
+        <RequiredItem identifier="flashpowder" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="0,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="112,213,23,9" depth="0.55" origin="0.5,0.5" />
+      <Body width="23" height="9" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+        <Attack structuredamage="15" targetforce="1" itemdamage="15" severlimbsprobability="0.5" penetration="0.2">
+          <Affliction identifier="gunshotwound" strength="35" />
+          <Affliction identifier="gunshotwound" strength="15" probability="0.2" />
+          <Affliction identifier="explosiondamage" strength="3" />
+          <Affliction identifier="bleeding" strength="30" />
+          <Affliction identifier="bleeding" strength="27" probability="0.22" />
+          <Affliction identifier="stun" strength="2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="fensmokevent" anglemin="70" anglemax="100" velocitymax="200" particlespersecond="64" colormultiplier="255,225,255,105" />
+          <Explosion range="250.0" ballastfloradamage="10" structuredamage="4" itemdamage="8" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.1" showeffects="false">
+            <Affliction identifier="feniternonlethalagent" strength="14.25" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="feniterrifleround2" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,rifleammo,riflemanbonus" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="rifle" amount="6" spawnprobability="0.015" />
+      <PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="0.0125" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.025" />
+      <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.02" />
+      <PreferredContainer secondary="secarmcab" minamount="6" maxamount="12" spawnprobability="0.02" />
+      <Price baseprice="38">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" minavailable="12" sold="true" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50" amount="12">
+        <RequiredSkill identifier="weapons" level="85" />
+        <RequiredItem identifier="lead" amount="2" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="paralyxis" />
+        <RequiredItem identifier="phosphorus" amount="2" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="64,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="112,222,23,9" depth="0.55" origin="0.5,0.5" />
+      <Body width="23" height="9" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+        <Attack structuredamage="15" targetforce="1" itemdamage="15" severlimbsprobability="0.1" penetration="0.2">
+          <Affliction identifier="gunshotwound" strength="29" />
+          <Affliction identifier="gunshotwound" strength="11" probability="0.2" />
+          <Affliction identifier="bleeding" strength="30" />
+          <Affliction identifier="bleeding" strength="13" probability="0.22" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Explosion range="90.0" ballastfloradamage="950" structuredamage="0" itemdamage="0" severlimbsprobability="0" showeffects="false" penetration="0.1">
+            <Affliction identifier="feniternerveagent" strength="6.95" />
+            <Affliction identifier="feniternerveagentcon" strength="1.95" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="feniterrifleround3" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,rifleammo,riflemanbonus" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="rifle" amount="6" spawnprobability="0.015" />
+      <PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="0.0125" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.025" />
+      <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.02" />
+      <PreferredContainer secondary="secarmcab" minamount="6" maxamount="12" spawnprobability="0.02" />
+      <Price baseprice="41">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" minavailable="12" sold="true" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50" amount="12">
+        <RequiredSkill identifier="weapons" level="85" />
+        <RequiredItem identifier="silicon" amount="2" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="dementonite" />
+        <RequiredItem identifier="potassium" />
+        <RequiredItem identifier="ethanol" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="128,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="112,231,23,9" depth="0.55" origin="0.5,0.5" />
+      <Body width="23" height="9" density="30" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+        <Attack structuredamage="15" targetforce="1" itemdamage="15" severlimbsprobability="0.5" penetration="0.4">
+          <Affliction identifier="gunshotwound" strength="32" />
+          <Affliction identifier="gunshotwound" strength="15" probability="0.2" />
+          <Affliction identifier="bleeding" strength="34" />
+          <Affliction identifier="bleeding" strength="19" probability="0.22" />
+          <Affliction identifier="stun" strength="2" />
+          <Affliction identifier="feniterpsychoagent" strength="4.5" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Explosion range="70.0" ballastfloradamage="0" structuredamage="0" itemdamage="0" severlimbsprobability="0" showeffects="false" penetration="0.1">
+            <Affliction identifier="feniterpsychoagent" strength="10.15" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="" identifier="fenitersmgmagazine1" maxstacksize="4" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="smg,smgunique,machinepistol" amount="1" spawnprobability="0.15" />
+      <PreferredContainer primary="armcab" amount="1" spawnprobability="0.195" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.25" />
+      <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.125" />
+      <PreferredContainer secondary="secarmcab" amount="1" spawnprobability="0.295" />
+      <Price baseprice="240" displaynonempty="true" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="chlorine" />
+        <RequiredItem identifier="raptorbane" />
+        <RequiredItem identifier="lead" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="flashpowder" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="chlorine" />
+        <RequiredItem identifier="raptorbane" />
+        <RequiredItem identifier="lead" />
+        <RequiredItem identifier="flashpowder" />
+        <RequiredItem tag="smgammo" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="lead" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" amount="2" />
+        <Item identifier="sulphuricacid" mincondition="0.95" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="0,0,64,64" />
+      <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" depth="0.54" sourcerect="49,196,21,44" origin="0.5,0.5" />
+      <Body width="14" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="fenitersmground1" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="fenitersmground1" />
+        <StatusEffect type="OnUse" target="This" condition="-4.8" disabledeltatime="true">
+          <SpawnItem identifiers="fenitersmground1" spawnposition="ThisInventory" />
+          <ParticleEmitter particle="scp_spentcasingpistol" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="350" copyentityangle="true" scalemin="0.55" scalemax="0.55" />
+        </StatusEffect>
+      </ItemContainer>
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="" identifier="fenitersmgmagazine2" maxstacksize="4" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="smg,smgunique,machinepistol" amount="1" spawnprobability="0.015" />
+      <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
+      <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.00215" />
+      <PreferredContainer secondary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
+      <Price baseprice="430" displaynonempty="true">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50">
+        <RequiredSkill identifier="weapons" level="70" />
+        <RequiredItem identifier="paralyxis" />
+        <RequiredItem identifier="phosphorus" amount="2" />
+        <RequiredItem identifier="silicon" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="paralyxis" />
+        <RequiredItem identifier="phosphorus" amount="2" />
+        <RequiredItem identifier="silicon" />
+        <RequiredItem tag="smgammo" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="silicon" mincondition="0.95" />
+        <Item identifier="paralyxis" mincondition="0.95" amount="2" />
+        <Item identifier="phosphorus" mincondition="0.95" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="64,0,64,64" />
+      <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" depth="0.54" sourcerect="70,196,21,44" origin="0.5,0.5" />
+      <Body width="14" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="fenitersmground2" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="fenitersmground2" />
+        <StatusEffect type="OnUse" target="This" condition="-4.8" disabledeltatime="true">
+          <SpawnItem identifiers="fenitersmground2" spawnposition="ThisInventory" />
+          <ParticleEmitter particle="scp_spentcasingpistol" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="350" copyentityangle="true" scalemin="0.55" scalemax="0.55" />
+          <Explosion range="50.0" ballastfloradamage="450" structuredamage="0" itemdamage="0" showeffects="false">
+            <Affliction identifier="feniternerveagentcon" strength="1.65" />
+            <Affliction identifier="feniternerveagent" strength="1.25" />
+          </Explosion>
+        </StatusEffect>
+      </ItemContainer>
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="" identifier="fenitersmgmagazine3" maxstacksize="4" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="smg,smgunique,machinepistol" amount="1" spawnprobability="0.015" />
+      <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />
+      <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
+      <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.00215" />
+      <PreferredContainer secondary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
+      <Price baseprice="470" displaynonempty="true">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50">
+        <RequiredSkill identifier="weapons" level="70" />
+        <RequiredItem identifier="dementonite" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="potassium" />
+        <RequiredItem identifier="silicon" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" requiredtime="50" displayname="recycleitem">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="dementonite" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="potassium" />
+        <RequiredItem identifier="silicon" />
+        <RequiredItem tag="smgammo" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="silicon" mincondition="0.95" />
+        <Item identifier="dementonite" mincondition="0.95" />
+        <Item identifier="potassium" mincondition="0.95" />
+        <Item identifier="ethanol" mincondition="0.95" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="128,0,64,64" />
+      <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" depth="0.54" sourcerect="91,196,21,44" origin="0.5,0.5" />
+      <Body width="14" height="40" density="25" />
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="fenitersmground3" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+        <Containable items="fenitersmground3" />
+        <StatusEffect type="OnUse" target="This" condition="-4.8" disabledeltatime="true">
+          <SpawnItem identifiers="fenitersmground3" spawnposition="ThisInventory" />
+          <ParticleEmitter particle="scp_spentcasingpistol" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="350" copyentityangle="true" scalemin="0.55" scalemax="0.55" />
+        </StatusEffect>
+      </ItemContainer>
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Override>
+</Items>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Ultra Diving Suit and Exo Suit Patch" modversion="1.0.2" corepackage="False" steamworkshopid="3721248317" gameversion="1.12.7.0">
+  <Item file="%ModDir%/chemical_agents.xml" />
+  <Item file="%ModDir%/divinggear.xml" />
+  <Item file="%ModDir%/enhanced_armaments.xml" />
+  <Item file="%ModDir%/exosuits.xml" />
+  <Item file="%ModDir%/RRR_armaments.xml" />
+  <Item file="%ModDir%/Engineer/Items.xml" />
+  <Item file="%ModDir%/hazmat/hazmat_suit.xml" />
+  <Item file="%ModDir%/real_sonar.xml" />
+</contentpackage>

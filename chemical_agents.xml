@@ -10,7 +10,7 @@
         <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" maxavailable="2" sold="true" />
       </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="40">
-        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredSkill identifier="weapons" level="40" />
         <RequiredSkill identifier="mechanical" level="30" />
         <RequiredSkill identifier="electrical" level="30" />
         <RequiredItem identifier="healthscanner" />
@@ -23,7 +23,7 @@
         <Item identifier="plastic" amount="2" />
         <Item identifier="rubber" amount="2" />
         <Item identifier="lead" />
-        <Item identifier="fpgacircuit" amount="2" />
+        <Item identifier="fpgacircuit" />
         <Item identifier="healthscanner" />
       </Deconstruct>
       <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/hazmatextra.png" sourcerect="0,0,150,120" origin="0.5,0.5" />
@@ -92,11 +92,12 @@
         </StatusEffect>
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.4" damagesound="LimbArmor" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.2" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn,blunttrauma" damagemultiplier="0.5" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn" damagemultiplier="0.35" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.5" damagesound="armourlightimpact" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.5" damagesound="LimbArmor" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="acidreaction" damagemultiplier="0.4" probabilitymultiplier="0" damagesound="LimbArmor" />
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="Chemical agents" damagemultiplier="0" probabilitymultiplier="0" damagesound="LimbArmor" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.4" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.6" damagesound="LimbArmor" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,bitewounds,lacerations,bleeding" damagemultiplier="0.7" damagesound="LimbArmor" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="scp_presolatexinfection,scp_hexgasdamage" damagemultiplier="0" probabilitymultiplier="0" />
         <damagemodifier afflictionidentifiers="contamination" armorsector="0.0,360.0" probabilitymultiplier="0" damagesound="LimbArmor" deflectprojectiles="true"/>
@@ -144,15 +145,8 @@
       <StatusHUD drawhudwhenequipped="true" range="1000" />
     </Item>
     <Item name="" identifier="fenitercbrneod" category="Equipment" tags="smallitem,clothing" scale="0.5" fireproof="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="feniterchemcrate1">
-      <Price baseprice="1300" sold="true">
-        <Price storeidentifier="merchantoutpost" multiplier="0.9" sold="false" />
-        <Price storeidentifier="merchantcity" multiplier="1.15" minavailable="1" maxavailable="1" sold="true" />
-        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" maxavailable="1" sold="true" />
-        <Price storeidentifier="merchantmilitary" minavailable="1" maxavailable="1" sold="true" />
-        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" maxavailable="1" sold="true" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="40">
-        <RequiredSkill identifier="weapons" level="90" />
+        <RequiredSkill identifier="weapons" level="80" />
         <RequiredSkill identifier="mechanical" level="50" />
         <RequiredSkill identifier="electrical" level="50" />
         <RequiredItem identifier="plastic" amount="5" />
@@ -226,17 +220,17 @@
           <ReduceAffliction type="stun" amount="1" />
         </StatusEffect>
         <StatusEffect tags="cbrnsuit" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
-        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.5" deflectprojectiles="true" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn" damagemultiplier="0.2" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.2" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn" damagemultiplier="0.12" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.03" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="acidreaction" damagemultiplier="0.4" probabilitymultiplier="0" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="scp_presolatexinfection,scp_hexgasdamage" damagemultiplier="0" probabilitymultiplier="0" />
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="Chemical agents" damagemultiplier="0" probabilitymultiplier="0" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.35" damagesound="armourlightimpact" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.2" damagesound="armourlightimpact" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.2" damagesound="armourlightimpact" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.12" damagesound="armourlightimpact" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,bleeding" damagemultiplier="0.2" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.6" damagesound="armourlightimpact" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.2" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.2" damagesound="armourlightimpact" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.05" />
         <damagemodifier afflictionidentifiers="contamination" armorsector="0.0,360.0" probabilitymultiplier="0" damagesound="LimbArmor" deflectprojectiles="true"/>
         <ItemComponent IsActiveConditionalComparison="Or">
           <IsActive InWater="eq true" />
@@ -277,13 +271,6 @@
       </ItemContainer>
     </Item>
     <Item name="" identifier="feniterhazmatarmored" category="Equipment" tags="smallitem,clothing,thermal" scale="0.5" fireproof="true" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="feniterchemcrate1">
-      <Price baseprice="2640" sold="true">
-        <Price storeidentifier="merchantoutpost" multiplier="0.9" sold="false" />
-        <Price storeidentifier="merchantcity" multiplier="1.15" minavailable="1" maxavailable="1" sold="true" />
-        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" maxavailable="1" sold="false" />
-        <Price storeidentifier="merchantmilitary" minavailable="1" maxavailable="1" sold="true" />
-        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" maxavailable="1" sold="false" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="40">
         <RequiredSkill identifier="weapons" level="80" />
         <RequiredSkill identifier="mechanical" level="60" />
@@ -386,7 +373,7 @@
           <ParticleEmitter particle="weldspark" copyentityangle="true" anglemin="0" anglemax="360" particleamount="60" velocitymin="100" velocitymax="3300" scalemin="0.45" scalemax="0.75" />
         </StatusEffect>
         <StatusEffect tags="cbrnsuit" type="OnWearing" target="Character" duration="1" stackable="false" setvalue="true" />
-        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.2" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.3" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,acidburn" damagemultiplier="0.15" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.05" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="acidreaction" damagemultiplier="0.1" probabilitymultiplier="0" />
@@ -394,9 +381,9 @@
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.3" damagesound="armourheavyimpact" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.6" damagesound="armourlightimpact" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,bleeding" damagemultiplier="0.35" damagesound="armourmedimpact" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.2" damagesound="armourheavyimpact" deflectprojectiles="true" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.15" damagesound="armourlightimpact" deflectprojectiles="true" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.2" damagesound="armourlightimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.3" damagesound="armourheavyimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.1" damagesound="armourlightimpact" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.1" damagesound="armourlightimpact" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="sensoryoverload" damagemultiplier="0.3" damagesound="armourlightimpact" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="scp_presolatexinfection,scp_hexgasdamage" damagemultiplier="0" probabilitymultiplier="0" />
         <damagemodifier afflictionidentifiers="contamination" armorsector="0.0,360.0" probabilitymultiplier="0" damagesound="LimbArmor" deflectprojectiles="true"/>
@@ -551,14 +538,6 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.25" />
       <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
       <PreferredContainer secondary="secarmcab" minamount="6" maxamount="12" spawnprobability="0.2" />
-      <Price baseprice="17">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
-        <Price storeidentifier="merchantcity" minavailable="12" sold="true" />
-        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
-        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="50" amount="12">
         <RequiredSkill identifier="weapons" level="40" />
         <RequiredItem identifier="lead" amount="2" />
@@ -604,14 +583,6 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.025" />
       <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.02" />
       <PreferredContainer secondary="secarmcab" minamount="6" maxamount="12" spawnprobability="0.02" />
-      <Price baseprice="38">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
-        <Price storeidentifier="merchantcity" minavailable="12" sold="true" />
-        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
-        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="50" amount="12">
         <RequiredSkill identifier="weapons" level="85" />
         <RequiredItem identifier="lead" amount="2" />
@@ -655,14 +626,6 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.025" />
       <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.02" />
       <PreferredContainer secondary="secarmcab" minamount="6" maxamount="12" spawnprobability="0.02" />
-      <Price baseprice="41">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
-        <Price storeidentifier="merchantcity" minavailable="12" sold="true" />
-        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
-        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="50" amount="12">
         <RequiredSkill identifier="weapons" level="85" />
         <RequiredItem identifier="silicon" amount="2" />
@@ -707,14 +670,6 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.25" />
       <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.125" />
       <PreferredContainer secondary="secarmcab" amount="1" spawnprobability="0.295" />
-      <Price baseprice="240" displaynonempty="true" minleveldifficulty="15">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
-        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
-        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
-        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="50">
         <RequiredSkill identifier="weapons" level="40" />
         <RequiredItem identifier="chlorine" />
@@ -733,9 +688,8 @@
       </Fabricate>
       <Deconstruct time="10">
         <Item identifier="steel" />
-        <Item identifier="lead" mincondition="0.95" />
-        <Item identifier="carbon" mincondition="0.95" amount="2" />
-        <Item identifier="sulphuricacid" mincondition="0.95" />
+        <Item identifier="lead" />
+        <Item identifier="carbon" amount="2" />
       </Deconstruct>
       <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="0,0,64,64" />
       <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" depth="0.54" sourcerect="49,196,21,44" origin="0.5,0.5" />
@@ -755,14 +709,6 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
       <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.00215" />
       <PreferredContainer secondary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
-      <Price baseprice="430" displaynonempty="true">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
-        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
-        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
-        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="50">
         <RequiredSkill identifier="weapons" level="70" />
         <RequiredItem identifier="paralyxis" />
@@ -779,9 +725,8 @@
       </Fabricate>
       <Deconstruct time="10">
         <Item identifier="steel" />
-        <Item identifier="silicon" mincondition="0.95" />
-        <Item identifier="paralyxis" mincondition="0.95" amount="2" />
-        <Item identifier="phosphorus" mincondition="0.95" />
+        <Item identifier="silicon" />
+        <Item identifier="phosphorus" />
       </Deconstruct>
       <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="64,0,64,64" />
       <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" depth="0.54" sourcerect="70,196,21,44" origin="0.5,0.5" />
@@ -805,14 +750,6 @@
       <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
       <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.00215" />
       <PreferredContainer secondary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.00925" />
-      <Price baseprice="470" displaynonempty="true">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
-        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
-        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
-        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
-        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
-      </Price>
       <Fabricate suitablefabricators="fabricator" requiredtime="50">
         <RequiredSkill identifier="weapons" level="70" />
         <RequiredItem identifier="dementonite" />
@@ -831,10 +768,9 @@
       </Fabricate>
       <Deconstruct time="10">
         <Item identifier="steel" />
-        <Item identifier="silicon" mincondition="0.95" />
-        <Item identifier="dementonite" mincondition="0.95" />
-        <Item identifier="potassium" mincondition="0.95" />
-        <Item identifier="ethanol" mincondition="0.95" />
+        <Item identifier="silicon" />
+        <Item identifier="potassium" />
+        <Item identifier="ethanol" />
       </Deconstruct>
       <InventoryIcon texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" sourcerect="128,0,64,64" />
       <Sprite texture="%ModDir:2974772300%/thecodelol/Items/chemicalwarfareammo.png" depth="0.54" sourcerect="91,196,21,44" origin="0.5,0.5" />
